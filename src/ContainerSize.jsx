@@ -9,17 +9,17 @@ var ContainerSize = React.createClass({
   },
   render: function(){
     var _this = this;
-    var displayInput = this.state.manual? {display: 'block'}: {display:'none'};
+    var displayInput = this.state.manual? {display: 'inline-block'}: {display:'none'};
     var button= function(obj, index){
       return <div className={(_this.state.active == index)? 'selection active' :'selection'} onClick={_this.handleButtonClick} key={index+obj.value} data-value={obj.mL_equiv} data-index={index}>{obj.value + obj.unit}</div>;
     };
     return (
       <div className="container-size">
         <label>Container Size <span className="pen-button" onClick={this.showManual}>{pen}</span></label>
+        <input style={displayInput} type="number" value={this.props.containerSize} onChange={this.handleChange}/>
         <div className="size-select-container select-container">
           {containers.map(button)}
         </div>
-        <input style={displayInput} type="number" value={this.props.containerSize} onChange={this.handleChange}/>
       </div>
       )
   },

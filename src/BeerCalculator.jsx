@@ -10,13 +10,13 @@ var Price = React.createClass({
   render: function(){
     return (
       <div className="price">
-        <label>Price</label>
+        <label>Price (£)</label>
         <div className="select-container">
           <input type="range" defaultValue={this.props.price} onChange={this.handleChange} min={0} max={50} step={0.1}/>
         </div>
         <input type="number" value={this.props.price} onChange={this.handleChange}/>
         <br/>
-        <label>People Drinking (optional)</label>
+        <label>People Drinking<br/>(optional)</label>
         <div className="select-container">
           <input type="range" defaultValue={this.props.personCount} onChange={this.handlePersonCountChange} min={0} max={20} step={1}/>
         </div>

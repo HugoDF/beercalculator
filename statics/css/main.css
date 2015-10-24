@@ -41,13 +41,18 @@ h1, h2{
 input[type=range]{
   width: 100%;
 }
+input[type=number]{
+  display: inline-block;
+  margin-bottom: 20px;
+  width: 50px;
+}
 h1{
   font-size: 40px;
 }
 label{
   font-size: 20px;
   margin-bottom: 20px;
-  display: inline-block;
+  display: block;
 }
 .submit-button{
   background: blue;
@@ -60,4 +65,5 @@ label{
 .section{
   margin-bottom: 30px;
   display: inline-block;
+  width: 100%;
 }

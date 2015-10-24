@@ -19773,7 +19773,7 @@ var AlcoholLevel = React.createClass({
   },
   render: function render() {
     var _this = this;
-    var displayInput = this.state.manual ? { display: 'block' } : { display: 'none' };
+    var displayInput = this.state.manual ? { display: 'inline-block' } : { display: 'none' };
     var alcoholButton = function alcoholButton(obj, index) {
       return React.createElement(
         'div',
@@ -19840,7 +19840,7 @@ var Price = React.createClass({
       React.createElement(
         'label',
         null,
-        'Price'
+        'Price (£)'
       ),
       React.createElement(
         'div',
@@ -19852,7 +19852,9 @@ var Price = React.createClass({
       React.createElement(
         'label',
         null,
-        'People Drinking (optional)'
+        'People Drinking',
+        React.createElement('br', null),
+        '(optional)'
       ),
       React.createElement(
         'div',
@@ -20133,7 +20135,7 @@ var ContainerSize = React.createClass({
   },
   render: function render() {
     var _this = this;
-    var displayInput = this.state.manual ? { display: 'block' } : { display: 'none' };
+    var displayInput = this.state.manual ? { display: 'inline-block' } : { display: 'none' };
     var button = function button(obj, index) {
       return React.createElement(
         'div',
@@ -20154,12 +20156,12 @@ var ContainerSize = React.createClass({
           pen
         )
       ),
+      React.createElement('input', { style: displayInput, type: 'number', value: this.props.containerSize, onChange: this.handleChange }),
       React.createElement(
         'div',
         { className: 'size-select-container select-container' },
         containers.map(button)
-      ),
-      React.createElement('input', { style: displayInput, type: 'number', value: this.props.containerSize, onChange: this.handleChange })
+      )
     );
   },
   handleChange: function handleChange(event) {
@@ -20194,7 +20196,7 @@ var PackSize = React.createClass({
   },
   render: function render() {
     var _this = this;
-    var displayInput = this.state.manual ? { display: 'block' } : { display: 'none' };
+    var displayInput = this.state.manual ? { display: 'inline-block' } : { display: 'none' };
     var button = function button(obj, index) {
       return React.createElement(
         'div',
@@ -20215,12 +20217,12 @@ var PackSize = React.createClass({
           pen
         )
       ),
+      React.createElement('input', { style: displayInput, type: 'number', value: this.props.packSize, onChange: this.handleChange }),
       React.createElement(
         'div',
         { className: 'select-container select-container' },
         packs.map(button)
-      ),
-      React.createElement('input', { style: displayInput, type: 'number', value: this.props.packSize, onChange: this.handleChange })
+      )
     );
   },
   handleChange: function handleChange(event) {

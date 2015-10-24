@@ -8,17 +8,17 @@ var PackSize = React.createClass({
   },
   render: function(){
     var _this = this;
-    var displayInput = this.state.manual? {display: 'block'}: {display:'none'};
+    var displayInput = this.state.manual? {display: 'inline-block'}: {display:'none'};
     var button= function(obj, index){
       return <div className={(_this.state.active == index)? 'selection active' :'selection'} onClick={_this.handleButtonClick} key={index+obj} data-value={obj} data-index={index}>{obj}</div>;
     };
     return (
       <div className="pack-size">
         <label>Pack Size <span className="pen-button" onClick={this.showManual}>{pen}</span></label>
+        <input style={displayInput} type="number" value={this.props.packSize} onChange={this.handleChange}/>
         <div className="select-container select-container">
           {packs.map(button)}
         </div>
-        <input style={displayInput} type="number" value={this.props.packSize} onChange={this.handleChange}/>
       </div>
       )
   },
