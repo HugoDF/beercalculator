@@ -44,9 +44,9 @@ var CalcResults = React.createClass({
     var pricePerLitre = (this.props.price > 0)? this.props.price/ totalVolume : 0;
     var pricePerLitreOfAlcohol = pricePerLitre / (this.props.abv/100);
     var pricePerCan = (this.props.price > 0 )? this.props.packSize / this.props.price : 0;
-    
+    var resultsStyle = (this.props.showResults)? {display: 'block'}: {display: 'none'};
     return (
-      <div className="calc-results">
+      <div style={resultsStyle} className="calc-results">
         <h1>Summary</h1>
         <h2>Total alcohol volume: {alcoholVolume.toFixed(0)}mL</h2>
         {

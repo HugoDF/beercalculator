@@ -1,58 +1,25 @@
 var React = require('react');
 var CalcResults = require('./CalcResults.jsx');
-var AlcoholLevel = React.createClass({
-  render: function(){
-    return (
-      <div className="alcohol-level">
-        <label>Alcohol Level</label>
-        <input type="number" value={this.props.abv} onChange={this.handleChange}/>
-      </div>
-      );
-  },
-  handleChange: function(event){
-    var newValue = event.target.value;
-    this.props.abvUpdate(newValue);
-  }
-});
-
-var ContainerSize = React.createClass({
-  render: function(){
-    return (
-      <div className="container-size">
-        <label>Container Size</label>
-        <input type="number" value={this.props.containerSize} onChange={this.handleChange}/>
-      </div>
-      )
-  },
-  handleChange: function(event){
-    var newValue = event.target.value;
-    this.props.containerSizeUpdate(newValue);
-  }
-});
-
-var PackSize = React.createClass({
-  render: function(){
-    return (
-      <div className="pack-size">
-        <label>Pack Size</label>
-        <input type="number" value={this.props.packSize} onChange={this.handleChange}/>
-      </div>
-      )
-  },
-  handleChange: function(event){
-    var newValue = event.target.value;
-    this.props.packSizeUpdate(newValue);
-  }
-});
+var AlcoholLevel = require('./AlcoholLevel.jsx');
+var ContainerSize = require('./ContainerSize.jsx');
+var PackSize = require('./PackSize.jsx');
+var pen = '\uD83D\uDD8B';
+var ReactSlider = require('react-slider');
 
 var Price = React.createClass({
   render: function(){
     return (
       <div className="price">
         <label>Price</label>
+        <div className="select-container">
+          <input type="range" defaultValue={this.props.price} onChange={this.handleChange} min={0} max={50} step={0.1}/>
+        </div>
         <input type="number" value={this.props.price} onChange={this.handleChange}/>
         <br/>
         <label>People Drinking (optional)</label>
+        <div className="select-container">
+          <input type="range" defaultValue={this.props.personCount} onChange={this.handlePersonCountChange} min={0} max={20} step={1}/>
+        </div>
         <input type="number" value={this.props.personCount} onChange={this.handlePersonCountChange}/>
       </div>
       )
@@ -67,40 +34,70 @@ var Price = React.createClass({
   }
 });
 
+var SubmitButton = React.createClass({
+  render: function(){
+    return (
+      <div className="submit-button" onClick={this.props.toggleShowResults}>
+        See Results
+      </div>
+      )
+  }
+});
+
 var BeerCalculator = React.createClass({
   getInitialState: function(){
     return {
-      abv: '4',
+      abv: '3.8',
       containerSize: '330',
       packSize: '12',
       price: '20',
-      personCount: '1'
+      personCount: '1',
+      showResults: false
     };
   },
   render: function(){
+    var submitButtonStyles = (!this.state.showResults)? {display: ''}: {display: 'none'};
+    var resultsStyles = (this.state.showResults)? {display: ''}: {display: 'none'};
     return (
       <div className="beer-calculator">
         <h1>Beer Calculator</h1>
-        <AlcoholLevel 
-          abvUpdate={this.abvUpdate} 
-          abv={this.state.abv}/>
-        <ContainerSize 
-          containerSizeUpdate={this.containerSizeUpdate} 
-          containerSize={this.state.containerSize}/>
-        <PackSize 
-          packSizeUpdate={this.packSizeUpdate} 
-          packSize={this.state.packSize}/>
-        <Price 
-          priceUpdate={this.priceUpdate}
-          personCountUpdate={this.personCountUpdate}
-          price={this.state.price}
-          personCount={this.state.personCount}/>
-        <CalcResults 
-          abv={this.state.abv} 
-          containerSize={this.state.containerSize}
-          packSize={this.state.packSize}
-          price={this.state.price}
-          personCount={this.state.personCount}/>
+        <div className="section">
+          <AlcoholLevel 
+            abvUpdate={this.abvUpdate} 
+            abv={this.state.abv}/>
+        </div>
+        <div className="section">
+          <ContainerSize 
+            containerSizeUpdate={this.containerSizeUpdate} 
+            containerSize={this.state.containerSize}/>
+        </div>
+        <div className="section">
+          <PackSize 
+            packSizeUpdate={this.packSizeUpdate} 
+            packSize={this.state.packSize}/>
+        </div>
+        <div className="section">
+          <Price 
+            priceUpdate={this.priceUpdate}
+            personCountUpdate={this.personCountUpdate}
+            price={this.state.price}
+            personCount={this.state.personCount}/>
+        </div>
+        <div className="section">
+          <SubmitButton
+            showSubmitButton={!this.state.showResults}
+            toggleShowResults={this.toggleShowResults}
+            showResults={this.state.showResults}/>
+        </div>
+        <div className="section">
+          <CalcResults
+            showResults={this.state.showResults}
+            abv={this.state.abv} 
+            containerSize={this.state.containerSize}
+            packSize={this.state.packSize}
+            price={this.state.price}
+            personCount={this.state.personCount}/>
+        </div>
       </div>
       );
   },
@@ -118,6 +115,9 @@ var BeerCalculator = React.createClass({
   },
   personCountUpdate: function(newValue){
     this.setState({personCount: newValue});
+  },
+  toggleShowResults: function(){
+    this.setState({showResults: !this.state.showResults});
   }
 });
 

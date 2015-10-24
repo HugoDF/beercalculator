@@ -1,0 +1,122 @@
+[
+    {
+      "title": "Heineken",
+      "description": "Some the looks like it came out of a bottle",
+      "percentage": 5.4
+    },
+    {
+      "title": "Carlsberg",
+      "description": "Nice to start the evening with when cold otherwise tastes like piss",
+      "percentage": 3.8
+    },
+    {
+      "title": "Carling",
+      "description": "Archetypical supermarket beer, lovely",
+      "percentage": 4.1
+    },
+    {
+      "title": "Amstel",
+      "description": "Harder than usual :)",
+      "percentage": 5
+    },
+    {
+      "title": "Stella Artois",
+      "description": "Get some Belgium in you",
+      "percentage": 5.2
+    },
+    {
+      "title": "Beck`s",
+      "description": "I've run out of ideas for this one sadly",
+      "percentage": 5
+    },
+    {
+      "title": "Peroni",
+      "description": "Italian who? I don't think even they drink it",
+      "percentage": 5.1
+    },
+    {
+      "title": "Sol",
+      "description": "All these beers are weird this one takes the crown though",
+      "percentage": 4.5
+    },
+    {
+      "title": "Corona",
+      "description": "Beer? What is this? Gimme some lime",
+      "percentage": 4.6
+    },
+    {
+      "title": "Tuborg",
+      "description": "I'm danish and cool like that",
+      "percentage": 4
+    },
+    {
+      "title": "Kronenbourg",
+      "description": "1664: Love that fucking date",
+      "percentage": 5
+    },
+    {
+      "title": "Coors Light",
+      "description": "Some American beer my friend",
+      "percentage": 4.2
+    },
+    {
+      "title": "Foster`s",
+      "description": "Aussie? Nope, oh well, cheap and throat-friendly, what is that they said about throat-friendly things?",
+      "percentage": 5.1
+    },
+    {
+      "title": "Budweiser",
+      "description": "No comment.",
+      "percentage": 5
+    },
+    {
+      "title": "Guinness",
+      "description": "Irish beer for all my lovelies, that nice dark colour the effect of burning, good right?",
+      "percentage": 4.2
+    },
+    {
+      "title": "Desperados",
+      "description": "Not quite beer but who cares right? Technically, untechnically, people think it`s beer or it isn`t, not my problem",
+      "percentage": 5.9
+    },
+    {
+      "title": "Staropramen",
+      "description": "Beer from the darkness",
+      "percentage": 4.8
+    },
+    {
+      "title": "San Miguel",
+      "description": "Check those little boats out, a taste of the south... but really it was probably brewed on this island and nowhere else",
+      "percentage": 5
+    },
+    {
+      "title": "Cobra",
+      "description": "A taste of China, wonderful, wonderful things to say about this... But no time",
+      "percentage": 4.8
+    },
+    {
+      "title": "Tiger",
+      "description": "The Lion roars, the Tiger gets drunk, a bit anticlimactic but who cares",
+      "percentage": 5
+    },
+    {
+      "title": "StrongBow",
+      "description": "Cider... what the hell? Anyhow, we include it just because, tell me if you want to see more non-beers in here",
+      "percentage": 5
+    },
+    {
+      "title": "Kopparberg",
+      "description": "Cider? Yes, tastes alright, more sugar makes you nice and fat for the next day, all good",
+      "percentage": 4.5
+    },
+    {
+      "title": "Bulmers",
+      "description": "Cider: get drunk with less beer and more calories (don`t quote me on this)",
+      "percentage": 4.5
+    },
+    {
+      "title": "Magners",
+      "description": "Cider: basically cider... cider... not-beer is also a worthy way to mention it",
+      "percentage": 4.5
+    }
+  ]

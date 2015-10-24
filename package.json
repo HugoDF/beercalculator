@@ -11,7 +11,8 @@
   "dependencies": {
     "babelify": "^6.4.0",
     "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react-dom": "^0.14.0",
+    "react-slider": "^0.6.0"
   },
   "devDependencies": {
     "babelify": "^6.4.0",

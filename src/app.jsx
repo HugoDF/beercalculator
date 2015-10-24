@@ -4,5 +4,5 @@ var BeerCalculator = require('./BeerCalculator.jsx')
 
 ReactDOM.render(
   <BeerCalculator/>,
-  document.getElementById('example')
+  document.getElementById('beercalculator')
 );
