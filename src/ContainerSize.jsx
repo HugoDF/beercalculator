@@ -18,7 +18,9 @@ var ContainerSize = React.createClass({
         <label>Container Size <span className="pen-button" onClick={this.showManual}>{pen}</span></label>
         <input style={displayInput} type="number" value={this.props.containerSize} onChange={this.handleChange}/>
         <div className="size-select-container select-container">
-          {containers.map(button)}
+          <div className="select-inner">
+            {containers.map(button)}
+          </div>
         </div>
       </div>
       )

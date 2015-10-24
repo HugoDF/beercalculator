@@ -17,7 +17,9 @@ var PackSize = React.createClass({
         <label>Pack Size <span className="pen-button" onClick={this.showManual}>{pen}</span></label>
         <input style={displayInput} type="number" value={this.props.packSize} onChange={this.handleChange}/>
         <div className="select-container select-container">
-          {packs.map(button)}
+          <div className="select-inner">
+            {packs.map(button)}
+          </div>
         </div>
       </div>
       )

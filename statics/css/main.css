@@ -13,9 +13,9 @@ h1, h2{
 }
 .selection{
   display: inline-block;
-  background-color: green;
+  background-color: #4444ff;
   margin-right: 10px;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   -webkit-transition: all .25s ease;
      -moz-transition: all .25s ease;
@@ -29,7 +29,7 @@ h1, h2{
   cursor: pointer;
 }
 .selection.active{
-  background-color: blue;
+  background-color: #22cc22;
 }
 .select-container{
   display: inline-block;
@@ -50,12 +50,16 @@ h1{
   font-size: 40px;
 }
 label{
-  font-size: 20px;
+  font-size: 25px;
   margin-bottom: 20px;
   display: block;
+  -moz-user-select: none; 
+        -khtml-user-select: none; 
+        -webkit-user-select: none; 
+        -o-user-select: none; 
 }
 .submit-button{
-  background: blue;
+  background: #4444ff;
   font-size: 26px;
   display: inline-block;
   padding: 10px 15px;

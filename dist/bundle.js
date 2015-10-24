@@ -19798,7 +19798,11 @@ var AlcoholLevel = React.createClass({
       React.createElement(
         'div',
         { className: 'select-abv select-container' },
-        levels.map(alcoholButton)
+        React.createElement(
+          'div',
+          { className: 'select-inner' },
+          levels.map(alcoholButton)
+        )
       )
     );
   },
@@ -19845,7 +19849,7 @@ var Price = React.createClass({
       React.createElement(
         'div',
         { className: 'select-container' },
-        React.createElement('input', { type: 'range', defaultValue: this.props.price, onChange: this.handleChange, min: 0, max: 50, step: 0.1 })
+        React.createElement('input', { type: 'range', value: this.props.price, onChange: this.handleChange, min: 0, max: 50, step: 0.1 })
       ),
       React.createElement('input', { type: 'number', value: this.props.price, onChange: this.handleChange }),
       React.createElement('br', null),
@@ -19859,7 +19863,7 @@ var Price = React.createClass({
       React.createElement(
         'div',
         { className: 'select-container' },
-        React.createElement('input', { type: 'range', defaultValue: this.props.personCount, onChange: this.handlePersonCountChange, min: 0, max: 20, step: 1 })
+        React.createElement('input', { type: 'range', value: this.props.personCount, onChange: this.handlePersonCountChange, min: 0, max: 20, step: 1 })
       ),
       React.createElement('input', { type: 'number', value: this.props.personCount, onChange: this.handlePersonCountChange })
     );
@@ -20160,7 +20164,11 @@ var ContainerSize = React.createClass({
       React.createElement(
         'div',
         { className: 'size-select-container select-container' },
-        containers.map(button)
+        React.createElement(
+          'div',
+          { className: 'select-inner' },
+          containers.map(button)
+        )
       )
     );
   },
@@ -20221,7 +20229,11 @@ var PackSize = React.createClass({
       React.createElement(
         'div',
         { className: 'select-container select-container' },
-        packs.map(button)
+        React.createElement(
+          'div',
+          { className: 'select-inner' },
+          packs.map(button)
+        )
       )
     );
   },

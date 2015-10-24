@@ -19,7 +19,9 @@ var AlcoholLevel = React.createClass({
         <label>Alcohol Level <span className="pen-button" onClick={this.showManual}>{pen}</span></label>
         <input style={displayInput} type="number" value={this.props.abv} onChange={this.handleChange}/>
         <div className="select-abv select-container">
-          {levels.map(alcoholButton)}
+          <div className="select-inner">
+            {levels.map(alcoholButton)}
+          </div>
         </div>
       </div>
       );
