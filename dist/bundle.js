@@ -20003,7 +20003,10 @@ var IndividualStats = React.createClass({
         "h2",
         null,
         "Number of units: ",
-        this.props.unitCount.toFixed(1)
+        this.props.unitCount.toFixed(1),
+        " (",
+        (this.props.unitCount / 3).toFixed(0),
+        " times the driving limit)"
       ),
       React.createElement(
         "h2",
@@ -20044,6 +20047,14 @@ var PerPersonStats = React.createClass({
       React.createElement(
         "h2",
         null,
+        unitsPerPerson.toFixed(1),
+        " units per person (",
+        (unitsPerPerson / 3).toFixed(1),
+        " times the driving limit)"
+      ),
+      React.createElement(
+        "h2",
+        null,
         "£",
         pricePerPerson.toFixed(2),
         "/person"
@@ -20061,12 +20072,6 @@ var PerPersonStats = React.createClass({
         "Alcohol content per Person: ",
         alcoholPerPerson.toFixed(0),
         "mL"
-      ),
-      React.createElement(
-        "h2",
-        null,
-        unitsPerPerson.toFixed(1),
-        " units per person"
       )
     );
   }

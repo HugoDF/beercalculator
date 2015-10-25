@@ -4,7 +4,7 @@ var IndividualStats = React.createClass({
   render: function(){
     return (
       <div className="individual-stats">
-        <h2>Number of units: {this.props.unitCount.toFixed(1)}</h2>
+        <h2>Number of units: {this.props.unitCount.toFixed(1)} ({(this.props.unitCount/3).toFixed(0)} times the driving limit)</h2>
         <h2>£{this.props.pricePerLitre.toFixed(2)}/L</h2>
         <h2>£{this.props.pricePerLitreOfAlcohol.toFixed(2)}/L of Alcohol</h2>
         <h2>Price per {this.props.containerSize}mL Container: £{this.props.pricePerCan.toFixed(2)}</h2>
@@ -20,10 +20,10 @@ var PerPersonStats = React.createClass({
     var unitsPerPerson = this.props.unitCount/this.props.personCount;
     return(
       <div className="per-person-stats">
+        <h2>{unitsPerPerson.toFixed(1)} units per person ({(unitsPerPerson/3).toFixed(1)} times the driving limit)</h2>
         <h2>£{pricePerPerson.toFixed(2)}/person</h2>
         <h2>{this.props.containerSize}mL containers per person: {containersPerPerson.toFixed(0)}</h2>
         <h2>Alcohol content per Person: {alcoholPerPerson.toFixed(0)}mL</h2>
-        <h2>{unitsPerPerson.toFixed(1)} units per person</h2>
       </div>
       )
   }
