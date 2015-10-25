@@ -11,6 +11,18 @@ h1, h2{
   max-width: 576px;
   margin: auto;
 }
+a{
+  color: #999;
+  text-decoration: none;
+}
+a:hover{
+  border-bottom: solid 1px;
+}
+.repos{
+  margin-top: 10px;
+  width: 100%;
+  display: inline-block;
+}
 .selection{
   display: inline-block;
   background-color: #4444ff;
